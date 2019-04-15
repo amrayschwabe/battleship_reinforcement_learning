@@ -14,14 +14,16 @@ Ships are placed such that no ship is directly adjacent or overlapping any other
 To play the game, an agent should create the environment through gym (gym.make('Battleship-v0')), reset it to get the
 initial state and then iteratively call the step function to drop bombs.
 States are given by a tensor of shape (10, 10, 1), i.e., a gray scale image of 10x10 pixels, where a value of 0.0
-encodes no knowledge about the particular field, 0.5 encodes a miss in the given field and 1.0 encodes a hit in the
-given field.
+encodes no knowledge about the particular field, 0.3 encodes a miss in the given field and 0.6 encodes a hit in the
+given field. 1.0 encodes a hit on a now sunken ship.
 Actions handed to the environment must be two dimensional (representing x and y coordinate) and lie within the range
 [0,1] to be counted as valid.
 Invalid actions will result in a reward of -1.0
 Hits will result in a reward of 1.0
 Misses will result in a reward of -0.1
 """
+
+
 class BattleshipEnv(gym.Env):
     def __init__(self, max_steps=100):
         self.max_steps = max_steps
