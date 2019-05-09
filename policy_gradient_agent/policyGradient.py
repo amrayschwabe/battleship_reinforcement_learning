@@ -147,7 +147,7 @@ def play_game(training=TRAINING):
         board_position_log.append(np.copy(current_board))
 
         probs = sess.run([probabilities], feed_dict={input_positions: current_board})[0][0]
-        probs = [p * (current_board[0][index] == 0) for index, p in enumerate(probs)]
+        probs = [p if (current_board[index] == 0) else -10 for index, p in enumerate(probs)]
         probs = [p / sum(probs) for p in probs]
 
         if training == True:

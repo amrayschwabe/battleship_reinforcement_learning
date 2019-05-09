@@ -46,13 +46,6 @@ def animate(history):
 
     plt.show()
 
-    '''
-    plt.rcParams['animation.ffmpeg_path'] = 'C:/Valentin/ffmpeg/bin/ffmpeg.exe'
-    Writer = matplotlib.animation.writers['ffmpeg']
-    writer = Writer(fps=15, metadata=dict(artist='Me'), bitrate=1800)
-    anim.save('im.mp4', writer=writer)
-    plt.close()
-    '''
 
 nr_plays = 1
 sumCount = list()
@@ -75,7 +68,6 @@ for i in range(nr_plays):
         state, reward, terminal, info = env.step(action)
         history.append(np.copy(state.reshape([10,10])))
 
-        #print(state.reshape([10, 10]))
 
         print(info['game_message'])
         counter += 1
