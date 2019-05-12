@@ -16,7 +16,7 @@ from keras import losses
 
 import tensorflow as tf
 
-EPISODES = 5000
+EPISODES = 50000
 
 def toAction(a):
     y = a % 10 / 10
@@ -52,12 +52,12 @@ class DQNAgent:
     def __init__(self, state_size, action_size):
         self.state_size = state_size
         self.action_size = action_size
-        self.memory = deque(maxlen=2000)
+        self.memory = deque(maxlen=500)
         self.gamma = 0.95    # discount rate
         self.epsilon = 1.0  # exploration rate
         self.epsilon_min = 0.05
         self.epsilon_decay = 0.99
-        self.learning_rate = 0.0001
+        self.learning_rate = 0.0005
         self.model = self._build_model()
         self.target_model = self._build_model()
         self.update_target_model()
@@ -65,10 +65,10 @@ class DQNAgent:
     def _build_model(self):
         # Neural Net for Deep-Q learning Model
         model = Sequential()
-        model.add(Dense(24, input_dim=self.state_size, activation='relu'))
-        model.add(Dense(24, activation='relu'))
-        model.add(Dense(self.action_size, activation='linear'))
-        model.compile(loss=losses.categorical_crossentropy,
+        model.add(Dense(100, input_dim=self.state_size, activation='tanh'))
+        model.add(Dense(100, activation='tanh'))
+        model.add(Dense(self.action_size, activation='softmax'))
+        model.compile(loss=losses.mean_squared_error,
                       optimizer=Adam(lr=self.learning_rate))
         return model
 
@@ -89,9 +89,10 @@ class DQNAgent:
                 if i == 0:
                     choices.append(count)
                 count += 1
-            return random.choice(choices)
+            choice = random.choice(choices)
+            return choice
         act_values = self.model.predict(state)[0]
-        act_values_possible = [p if (current_board[index] == 0) else -10 for index, p in enumerate(act_values)]
+        act_values_possible = [p if (current_board[index] == 0) else -np.infty for index, p in enumerate(act_values)]
         return np.argmax(act_values_possible)  # returns action
 
     def replay(self, batch_size):
@@ -99,7 +100,7 @@ class DQNAgent:
         for state, action, reward, next_state, done in minibatch:
             target = self.model.predict(state)
             if done:
-                target[0][action] = reward
+                target[0][action] = reward + 10
             else:
                 # a = self.model.predict(next_state)[0]
                 t = self.target_model.predict(next_state)[0]
@@ -137,7 +138,6 @@ if __name__ == "__main__":
             current_board = state.reshape(1, -1)
             action = agent.act(state)
             next_state, reward, done, _ = env.step(toAction(action))
-            reward = reward
             next_state = np.reshape(next_state, [1, state_size])
             agent.remember(state, action, reward, next_state, done)
             state = next_state

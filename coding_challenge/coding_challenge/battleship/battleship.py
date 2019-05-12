@@ -25,7 +25,7 @@ Misses will result in a reward of -0.1
 
 
 class BattleshipEnv(gym.Env):
-    def __init__(self, max_steps=250):
+    def __init__(self, max_steps=100):
         self.max_steps = max_steps
         self.action_space = spaces.Box(0.0, 1.0, (2,))
         self.observation_space = spaces.Box(0.0, 1.0, (10, 10, 1))
