@@ -1,9 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7bac6609-319d-4410-890f-3efb055f35d8" name="Default Changelist" comment="changed making sure no double access">
+    <list default="true" id="7bac6609-319d-4410-890f-3efb055f35d8" name="Default Changelist" comment="cleaning up code">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/coding_challenge/coding_challenge/battleship/battleship.py" afterPath="$PROJECT_DIR$/coding_challenge/coding_challenge/battleship/battleship.py" />
+      <change beforePath="$PROJECT_DIR$/10000episodes.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/10000episodes005lr.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/50000epochs001lr.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/only10000episodes.png" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/only1000episodes.png" afterPath="" />
       <change beforePath="$PROJECT_DIR$/policy_gradient_agent/dqn.py" afterPath="$PROJECT_DIR$/policy_gradient_agent/dqn.py" />
       <change beforePath="$PROJECT_DIR$/policy_gradient_agent/policyGradient.py" afterPath="$PROJECT_DIR$/policy_gradient_agent/policyGradient.py" />
     </list>
@@ -15,9 +19,9 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/Coding_Challenge$policyGradient.coverage" NAME="policyGradient Coverage Results" MODIFIED="1557677508413" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/policy_gradient_agent" />
+    <SUITE FILE_PATH="coverage/Coding_Challenge$policyGradient.coverage" NAME="policyGradient Coverage Results" MODIFIED="1557736932894" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/policy_gradient_agent" />
     <SUITE FILE_PATH="coverage/Coding_Challenge$random_agent.coverage" NAME="random_agent Coverage Results" MODIFIED="1557329511195" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/random_agent" />
-    <SUITE FILE_PATH="coverage/Coding_Challenge$dqn.coverage" NAME="dqn Coverage Results" MODIFIED="1557678394066" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/policy_gradient_agent" />
+    <SUITE FILE_PATH="coverage/Coding_Challenge$dqn.coverage" NAME="dqn Coverage Results" MODIFIED="1557698314536" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/policy_gradient_agent" />
     <SUITE FILE_PATH="coverage/Coding_Challenge$agent007.coverage" NAME="agent007 Coverage Results" MODIFIED="1554639802336" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/agent007" />
     <SUITE FILE_PATH="coverage/Coding_Challenge$setup.coverage" NAME="setup Coverage Results" MODIFIED="1557329506763" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/coding_challenge" />
   </component>
@@ -79,8 +83,8 @@
       <file leaf-file-name="policyGradient.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/policy_gradient_agent/policyGradient.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1379">
-              <caret line="32" column="0" lean-forward="false" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
+            <state relative-caret-position="129">
+              <caret line="73" column="0" lean-forward="false" selection-start-line="73" selection-start-column="0" selection-end-line="73" selection-end-column="0" />
               <folding>
                 <element signature="e#23#46#0" expanded="true" />
               </folding>
@@ -91,8 +95,8 @@
       <file leaf-file-name="dqn.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/policy_gradient_agent/dqn.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="206">
-              <caret line="97" column="0" lean-forward="false" selection-start-line="97" selection-start-column="0" selection-end-line="97" selection-end-column="0" />
+            <state relative-caret-position="391">
+              <caret line="148" column="21" lean-forward="false" selection-start-line="148" selection-start-column="21" selection-end-line="148" selection-end-column="21" />
               <folding>
                 <element signature="e#24#37#0" expanded="true" />
               </folding>
@@ -161,8 +165,8 @@
         <option value="$PROJECT_DIR$/agent007/agent007.py" />
         <option value="$PROJECT_DIR$/random_agent/random_agent.py" />
         <option value="$PROJECT_DIR$/coding_challenge/coding_challenge/battleship/battleship.py" />
-        <option value="$PROJECT_DIR$/policy_gradient_agent/policyGradient.py" />
         <option value="$PROJECT_DIR$/policy_gradient_agent/dqn.py" />
+        <option value="$PROJECT_DIR$/policy_gradient_agent/policyGradient.py" />
       </list>
     </option>
   </component>
@@ -212,7 +216,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.dqn">
+  <component name="RunManager" selected="Python.policyGradient">
     <configuration name="agent007" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -317,8 +321,8 @@
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.dqn" />
-        <item index="1" class="java.lang.String" itemvalue="Python.policyGradient" />
+        <item index="0" class="java.lang.String" itemvalue="Python.policyGradient" />
+        <item index="1" class="java.lang.String" itemvalue="Python.dqn" />
         <item index="2" class="java.lang.String" itemvalue="Python.random_agent" />
         <item index="3" class="java.lang.String" itemvalue="Python.setup" />
         <item index="4" class="java.lang.String" itemvalue="Python.agent007" />
@@ -353,7 +357,14 @@
       <option name="project" value="LOCAL" />
       <updated>1557405506398</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="cleaning up code">
+      <created>1557680499780</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1557680499780</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -363,12 +374,12 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2621871" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20421608" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3043478" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32938075" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.34139404" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="SciView" active="true" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.5736767" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="SciView" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.58082974" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.13702239" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -415,7 +426,8 @@
     <MESSAGE value="added dqn" />
     <MESSAGE value="changed [p if (current_board[index] == 0) else -10 for index, p in enumerate(act_values)]" />
     <MESSAGE value="changed making sure no double access" />
-    <option name="LAST_COMMIT_MESSAGE" value="changed making sure no double access" />
+    <MESSAGE value="cleaning up code" />
+    <option name="LAST_COMMIT_MESSAGE" value="cleaning up code" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -641,8 +653,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/policy_gradient_agent/dqn.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="206">
-          <caret line="97" column="0" lean-forward="false" selection-start-line="97" selection-start-column="0" selection-end-line="97" selection-end-column="0" />
+        <state relative-caret-position="391">
+          <caret line="148" column="21" lean-forward="false" selection-start-line="148" selection-start-column="21" selection-end-line="148" selection-end-column="21" />
           <folding>
             <element signature="e#24#37#0" expanded="true" />
           </folding>
@@ -651,8 +663,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/policy_gradient_agent/policyGradient.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1379">
-          <caret line="32" column="0" lean-forward="false" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
+        <state relative-caret-position="129">
+          <caret line="73" column="0" lean-forward="false" selection-start-line="73" selection-start-column="0" selection-end-line="73" selection-end-column="0" />
           <folding>
             <element signature="e#23#46#0" expanded="true" />
           </folding>

@@ -9,9 +9,9 @@ import coding_challenge
 import matplotlib.animation
 
 TRAINING = True
-LOAD = False
+LOAD = True
 BOARD_SIZE = 100
-ALPHA = 0.0005  # step size
+ALPHA = 0.003  # step size
 nr_episodes = 50001  # number of training episodes
 
 #create the model
@@ -34,7 +34,7 @@ probabilities = tf.nn.softmax(logits)
 
 cross_entropy = tf.nn.sparse_softmax_cross_entropy_with_logits(
     logits=logits, labels=labels, name='xentropy')
-train_step = tf.train.AdamOptimizer(
+train_step = tf.train.GradientDescentOptimizer(
     learning_rate=learning_rate).minimize(cross_entropy)
 init = tf.global_variables_initializer()
 # Start TF session
@@ -107,7 +107,7 @@ def play_game(training=TRAINING):
 
     return board_position_log, action_log, reward_log
 
-def load(source):
+def load_and_evaluate(source):
     # load existing model
     saver = tf.train.Saver()
     saver.restore(sess,
@@ -126,7 +126,16 @@ def load(source):
     board_position_log, action_log, reward_log = play_game(False)
     animate(board_position_log)
 
-def train(sess):
+def load_and_train(source):
+    # load existing model
+    saver = tf.train.Saver()
+    saver.restore(sess,
+                  source)
+
+    train()
+
+
+def train():
     # Training loop
     game_lengths = []
 
@@ -147,7 +156,7 @@ def train(sess):
         #save every 5000 game
         if game != 0 and game % 5000 == 0:
             saver = tf.train.Saver(var_list=tf.trainable_variables(), max_to_keep=2)
-            saver.save(sess, r'/Users/amrayschwabe/Documents/ETH/Master/2. Semester/Deep Reinforcement Leraning Seminar/Coding_Challenge/models', global_step=game)
+            saver.save(sess, r'/Users/amrayschwabe/Documents/ETH/Master/2. Semester/Deep Reinforcement Leraning Seminar/Coding_Challenge/models/', global_step=game)
 
         #plot progress every 500 games
         if game > 500 and game % 500 == 0:
@@ -159,7 +168,10 @@ def train(sess):
 
 if __name__ == "__main__":
     env = gym.make('Battleship-v0')
-    if LOAD:
-        load(r'/Users/amrayschwabe/Documents/ETH/Master/2. Semester/Deep Reinforcement Leraning Seminar/Coding_Challenge/models')
+    if LOAD and not TRAINING:
+        load_and_evaluate(r'/Users/amrayschwabe/Documents/ETH/Master/2. Semester/Deep Reinforcement Leraning Seminar/Coding_Challenge/models/models-50000')
+    elif LOAD and TRAINING:
+        load_and_train(
+            r'/Users/amrayschwabe/Documents/ETH/Master/2. Semester/Deep Reinforcement Leraning Seminar/Coding_Challenge/models/models-50000')
     else:
-        train(sess)
+        train()

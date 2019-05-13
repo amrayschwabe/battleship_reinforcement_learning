@@ -57,7 +57,7 @@ class DQNAgent:
         self.epsilon = 1.0  # exploration rate
         self.epsilon_min = 0.05
         self.epsilon_decay = 0.99
-        self.learning_rate = 0.0005
+        self.learning_rate = 0.005
         self.model = self._build_model()
         self.target_model = self._build_model()
         self.update_target_model()
@@ -123,14 +123,9 @@ if __name__ == "__main__":
     state_size = 100
     action_size = 100
     agent = DQNAgent(state_size, action_size)
-    # agent.load("./save/cartpole-ddqn.h5")
     done = False
     batch_size = 32
-
-    xdata = []
-    ydata = []
-
-
+    game_lengths = []
     for e in range(EPISODES):
         state = env.reset()
         state = np.reshape(state, [1, state_size])
@@ -143,16 +138,17 @@ if __name__ == "__main__":
             state = next_state
             if done:
                 agent.update_target_model()
+                game_lengths.append(time)
                 print("episode: {}/{}, score: {}, e: {:.2}"
                       .format(e, EPISODES, time, agent.epsilon))
                 break
             if len(agent.memory) > batch_size:
                 agent.replay(batch_size)
 
-        xdata.append(e)
-        ydata.append(time)
-        if(e%100 == 0):
-            plt.plot(xdata,ydata)
+        # plot progress every 500 games
+        if e > 0 and e % 100 == 0:
+            window_size = 100
+            running_average_length = [np.mean(game_lengths[i:i + window_size]) for i in
+                                      range(len(game_lengths) - window_size)]
+            plt.plot(running_average_length)
             plt.show()
-        # if e % 10 == 0:
-        #     agent.save("./save/cartpole-ddqn.h5")
