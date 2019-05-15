@@ -8,7 +8,7 @@ import os
 import coding_challenge
 import matplotlib.animation
 
-TRAINING = True
+TRAINING = False
 LOAD = True
 BOARD_SIZE = 100
 ALPHA = 0.003  # step size
@@ -169,9 +169,9 @@ def train():
 if __name__ == "__main__":
     env = gym.make('Battleship-v0')
     if LOAD and not TRAINING:
-        load_and_evaluate(r'/Users/amrayschwabe/Documents/ETH/Master/2. Semester/Deep Reinforcement Leraning Seminar/Coding_Challenge/models/models-50000')
+        load_and_evaluate(r'/Users/amrayschwabe/Documents/ETH/Master/2. Semester/Deep Reinforcement Leraning Seminar/Coding_Challenge/models/-50000')
     elif LOAD and TRAINING:
         load_and_train(
-            r'/Users/amrayschwabe/Documents/ETH/Master/2. Semester/Deep Reinforcement Leraning Seminar/Coding_Challenge/models/models-50000')
+            r'/Users/amrayschwabe/Documents/ETH/Master/2. Semester/Deep Reinforcement Leraning Seminar/Coding_Challenge/models/-50000')
     else:
         train()
